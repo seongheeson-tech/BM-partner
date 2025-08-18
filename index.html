@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Landing | 프로젝트 소개</title>
+  <meta name="description" content="간단한 소개 페이지 템플릿" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link href="styles.css" rel="stylesheet" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="#">로라 라운지</a>
+      <nav id="nav" class="nav-links">
+        <a href="#features">특징</a>
+        <a href="#how">어떻게 작동하나요</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contact" class="btn btn--sm">문의하기</a>
+      </nav>
+      <button class="hamburger" aria-label="메뉴 열기" onclick="toggleNav()">☰</button>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section class="hero">
+      <div class="container hero__grid">
+        <div class="hero__text">
+          <h1>“한 번에 끝내는” 간단 랜딩페이지</h1>
+          <p class="lead">코딩 몰라도 운영 가능한 소개 페이지 템플릿입니다. 텍스트만 바꾸고 바로 배포하세요.</p>
+          <div class="hero__cta">
+            <a href="#contact" class="btn btn--primary">상담/문의</a>
+            <a href="#features" class="btn btn--ghost">자세히 보기</a>
+          </div>
+          <ul class="hero__bullets">
+            <li>반응형 디자인 · 폰트 적용(Inter)</li>
+            <li>FAQ/문의 폼 포함 (Formspree 연동 가능)</li>
+            <li>Vercel로 5분 배포</li>
+          </ul>
+        </div>
+        <div class="hero__media">
+          <div class="card preview">
+            <div class="preview__bar"></div>
+            <div class="preview__body">
+              <div class="preview__left"></div>
+              <div class="preview__right"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features -->
+    <section id="features" class="section">
+      <div class="container">
+        <h2>핵심 특징</h2>
+        <div class="grid-3">
+          <div class="card">
+            <h3>초간단 편집</h3>
+            <p>HTML에서 문구만 교체해도 완성. 필요 시 CSS로 색상/폰트만 살짝 수정하세요.</p>
+          </div>
+          <div class="card">
+            <h3>빠른 배포</h3>
+            <p>GitHub → Vercel로 연결하면 자동 배포. 커스텀 도메인도 손쉽게 연결됩니다.</p>
+          </div>
+          <div class="card">
+            <h3>확장성</h3>
+            <p>블로그/공지/채용 등 섹션 추가가 쉬운 구조입니다.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- How it works -->
+    <section id="how" class="section section--alt">
+      <div class="container">
+        <h2>만드는 순서 (요약)</h2>
+        <ol class="steps">
+          <li><strong>텍스트 수정:</strong> 이 파일의 문구를 본인 서비스에 맞게 바꿉니다.</li>
+          <li><strong>GitHub 업로드:</strong> 새 리포지토리에 업로드합니다.</li>
+          <li><strong>Vercel 배포:</strong> Vercel에서 Import Project → Deploy를 누르면 끝!</li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- Callout -->
+    <section class="callout">
+      <div class="container callout__inner">
+        <div>
+          <h2>지금 바로 시작해보세요</h2>
+          <p>폼 연동만 하면 즉시 리드를 받을 수 있어요.</p>
+        </div>
+        <a href="#contact" class="btn btn--primary btn--lg">문의 남기기</a>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="section">
+      <div class="container">
+        <h2>자주 묻는 질문</h2>
+        <div class="faq">
+          <details>
+            <summary>코딩 몰라도 가능한가요?</summary>
+            <p>가능합니다. 이 템플릿은 텍스트 교체만으로 운영할 수 있게 구성해두었습니다.</p>
+          </details>
+          <details>
+            <summary>Vercel은 유료인가요?</summary>
+            <p>개인/소규모 프로젝트는 무료 요금제로 충분합니다.</p>
+          </details>
+          <details>
+            <summary>문의 폼은 어떻게 받나요?</summary>
+            <p>Formspree 같은 서비스에 이메일을 등록하고 action URL만 교체하세요.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="section section--alt">
+      <div class="container">
+        <h2>문의하기</h2>
+        <form class="form" method="POST" action="https://formspree.io/f/your-form-id">
+          <div class="form__grid">
+            <label>이름
+              <input type="text" name="name" placeholder="홍길동" required>
+            </label>
+            <label>이메일
+              <input type="email" name="email" placeholder="you@example.com" required>
+            </label>
+            <label class="full">메시지
+              <textarea name="message" rows="5" placeholder="문의 내용을 적어주세요" required></textarea>
+            </label>
+          </div>
+          <button type="submit" class="btn btn--primary">보내기</button>
+        </form>
+        <p class="form__note">* Formspree에 가입하고 위 action URL을 본인 것으로 바꾸세요.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer__grid">
+      <div>© <span id="year"></span> 로라 라운지</div>
+      <div class="footer__links">
+        <a href="#">이용약관</a>
+        <a href="#">개인정보처리방침</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
